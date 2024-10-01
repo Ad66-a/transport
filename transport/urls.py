@@ -23,3 +23,11 @@ urlpatterns = [
     path('<int:id>/edit/', views.vehicle_update, name='vehicle_update'),
     path('<int:id>/delete/', views.vehicle_delete, name='vehicle_delete'),
 ]
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('vehicles/', include('vehicles.urls')),  # Link to vehicles app URLs
+]
