@@ -19,8 +19,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
     path('', views.vehicle_list, name='vehicle_list'),
     path('create/', views.vehicle_create, name='vehicle_create'),
     path('<int:id>/edit/', views.vehicle_update, name='vehicle_update'),
@@ -32,5 +30,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
     path('vehicles/', include('vehicles.urls')),  # Link to vehicles app URLs
 ]
